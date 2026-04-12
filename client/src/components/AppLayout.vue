@@ -63,7 +63,7 @@ async function handleLogout() {
   min-height: 100vh;
 }
 .sidebar {
-  width: 220px;
+  width: 230px;
   flex-shrink: 0;
   background: var(--bg-secondary);
   border-right: 1px solid var(--border);
