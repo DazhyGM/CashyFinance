@@ -1,0 +1,73 @@
+.overlay {
+  position: fixed; inset: 0;
+  background: rgba(0,0,0,0.65);
+  display: flex; align-items: center; justify-content: center;
+  z-index: 1000;
+  padding: 20px;
+}
+.modal {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-xl);
+  padding: 28px;
+  width: 100%;
+  max-width: 420px;
+  max-height: 90vh;
+  overflow-y: auto;
+}
+.modal-header {
+  display: flex; align-items: center; justify-content: space-between;
+  margin-bottom: 24px;
+}
+h3 { font-size: 17px; font-weight: 600; display: flex; align-items: center; gap: 8px; }
+.title-icon { font-size: 20px; }
+.title-ingreso { color: var(--green-mid); }
+.title-gasto { color: var(--red-mid); }
+.title-deuda { color: var(--blue-mid); }
+.close-btn {
+  background: none; border: none;
+  color: var(--text-muted); font-size: 16px;
+  padding: 4px 8px; border-radius: 4px;
+  transition: color 0.15s;
+}
+.close-btn:hover { color: var(--text-primary); }
+.field { margin-bottom: 16px; }
+.field label {
+  display: block; font-size: 12px;
+  color: var(--text-secondary); margin-bottom: 6px;
+}
+.input-prefix-wrap { position: relative; }
+.prefix {
+  position: absolute; left: 10px; top: 50%;
+  transform: translateY(-50%);
+  font-size: 14px; color: var(--text-secondary);
+  pointer-events: none;
+}
+.error-msg {
+  font-size: 13px; color: var(--red-mid);
+  background: rgba(224,71,70,0.08);
+  border: 1px solid rgba(224,71,70,0.2);
+  border-radius: var(--radius-sm);
+  padding: 10px 12px; margin-bottom: 12px;
+}
+.modal-actions { display: flex; gap: 10px; margin-top: 8px; }
+.btn-cancel {
+  flex: 1; padding: 11px;
+  background: var(--bg-secondary);
+  border: 1px solid var(--border);
+  color: var(--text-secondary);
+  border-radius: var(--radius-sm); font-size: 14px;
+  transition: all 0.15s;
+}
+.btn-cancel:hover { color: var(--text-primary); border-color: var(--border-light); }
+.btn-save {
+  flex: 2; padding: 11px;
+  border: none; border-radius: var(--radius-sm);
+  font-size: 14px; font-weight: 500; color: #fff;
+  transition: opacity 0.15s;
+}
+.btn-save:disabled { opacity: 0.5; cursor: not-allowed; }
+.btn-save-ingreso { background: var(--green); }
+.btn-save-gasto { background: var(--red); }
+.btn-save-deuda { background: var(--blue); }
+.btn-save:hover:not(:disabled) { opacity: 0.88; }
