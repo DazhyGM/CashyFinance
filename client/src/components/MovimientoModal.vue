@@ -125,7 +125,6 @@ function formatValor(e) {
   form.value.valorDisplay = raw ? parseInt(raw).toLocaleString('es-CO') : ''
 }
 
-// Cargar datos si es edición
 watch(() => props.item, (item) => {
   if (item) {
     editando.value = true
