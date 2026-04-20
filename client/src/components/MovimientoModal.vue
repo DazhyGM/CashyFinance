@@ -27,7 +27,6 @@
                 </select>
               </div>
 
-              <!-- Día del mes: solo para gastos/deudas con frecuencia mensual -->
               <Transition name="fade">
                 <div v-if="tipo !== 'ingreso' && form.frecuencia === 'mensual'" class="field">
                   <label>Día del mes para el cobro (1 – 31)</label>
@@ -192,7 +191,6 @@ async function handleSubmit() {
     loading.value = false
   }
 }
-// Commit de prueba
 </script>
 
 <style scoped>
