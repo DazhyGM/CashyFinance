@@ -1,7 +1,6 @@
 <template>
     <AppLayout>
         <div class="dashboard">
-            <!-- Header -->
             <div class="page-header">
                 <div>
                     <p class="greeting">Bienvenido de vuelta</p>
@@ -14,7 +13,6 @@
                 </div>
             </div>
 
-            <!-- Tarjetas de resumen -->
             <div v-if="loading" class="loading-state">Cargando...</div>
             <template v-else>
                 <div class="cards-grid">
@@ -44,7 +42,6 @@
                     </div>
                 </div>
 
-                <!-- Balance neto -->
                 <div class="balance-card">
                     <div class="balance-left">
                         <p class="balance-label">Balance neto del mes</p>
@@ -66,7 +63,6 @@
                     </div>
                 </div>
 
-                <!-- Botones de acción -->
                 <div class="actions-row">
                     <button class="action-btn btn-green" @click="abrirModal('ingreso')">
                         <span class="action-icon">↑</span>
@@ -82,7 +78,6 @@
                     </button>
                 </div>
 
-                <!-- Últimos movimientos -->
                 <div class="movimientos-card">
                     <div class="card-header">
                         <h2>Últimos movimientos</h2>
@@ -111,7 +106,6 @@
             </template>
         </div>
 
-        <!-- Modal -->
         <MovimientoModal :show="modalVisible" :tipo="modalTipo" :item="null" @close="modalVisible = false"
             @saved="cargarDashboard" />
     </AppLayout>
