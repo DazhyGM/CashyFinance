@@ -15,7 +15,6 @@
             </div>
 
             <template v-else>
-                <!-- Tabla resumen -->
                 <div class="tabla-card">
                     <div class="tabla-header">
                         <span>Mes</span>
@@ -37,7 +36,6 @@
                     </div>
                 </div>
 
-                <!-- Detalle del mes seleccionado -->
                 <Transition name="slide-up">
                     <div v-if="mesSeleccionado && detallesMes" class="detalle-mes">
                         <h2 class="detalle-titulo">{{ formatMes(mesSeleccionado) }}</h2>
