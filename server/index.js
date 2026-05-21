@@ -36,7 +36,7 @@ app.use('/api/gastos', gastosRoutes)
 app.use('/api/deudas', deudasRoutes)
 app.use('/api/dashboard', dashboardRoutes)
 
-// Health check
+
 app.get('/api/health', (req, res) => {
   res.json({ status: 'ok', timestamp: new Date().toISOString() })
 })
