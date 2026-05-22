@@ -12,7 +12,6 @@ const dashboardRoutes = require('./routes/dashboard')
 const app = express()
 const PORT = process.env.PORT || 3001
 
-// Middlewares
 app.use(cors({
   origin: 'http://localhost:5173',
   credentials: true
@@ -29,7 +28,6 @@ app.use(session({
   }
 }))
 
-// Rutas
 app.use('/api/auth', authRoutes)
 app.use('/api/ingresos', ingresosRoutes)
 app.use('/api/gastos', gastosRoutes)
