@@ -6,7 +6,6 @@ const api = axios.create({
   headers: { 'Content-Type': 'application/json' }
 })
 
-// Interceptor global de errores
 api.interceptors.response.use(
   res => res,
   err => {
