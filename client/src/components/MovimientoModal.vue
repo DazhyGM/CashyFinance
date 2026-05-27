@@ -75,8 +75,8 @@ import api from '../api'
 
 const props = defineProps({
   show: Boolean,
-  tipo: { type: String, default: 'ingreso' }, // ingreso | gasto | deuda
-  item: { type: Object, default: null } // si viene, es edición
+  tipo: { type: String, default: 'ingreso' }, 
+  item: { type: Object, default: null } 
 })
 const emit = defineEmits(['close', 'saved'])
 
