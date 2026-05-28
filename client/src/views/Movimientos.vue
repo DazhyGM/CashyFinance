@@ -128,7 +128,6 @@ async function cargarItems() {
     try {
         const endpoint = endpoints[tipo.value]
         const { data } = await api.get(endpoint)
-        // Para gastos y deudas la respuesta tiene { gastos/deudas, registros }
         if (Array.isArray(data)) {
             items.value = data
         } else {
