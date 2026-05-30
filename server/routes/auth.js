@@ -3,7 +3,6 @@ const router = express.Router()
 const bcrypt = require('bcryptjs')
 const db = require('../db')
 
-// POST /api/auth/register
 router.post('/register', async (req, res) => {
   const { nick, password } = req.body
   if (!nick || !password) {
@@ -34,7 +33,6 @@ router.post('/register', async (req, res) => {
   }
 })
 
-// POST /api/auth/login
 router.post('/login', async (req, res) => {
   const { nick, password } = req.body
   if (!nick || !password) {
@@ -59,7 +57,6 @@ router.post('/login', async (req, res) => {
   }
 })
 
-// POST /api/auth/logout
 router.post('/logout', (req, res) => {
   req.session.destroy(() => {
     res.json({ message: 'Sesión cerrada.' })
