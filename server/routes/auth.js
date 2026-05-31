@@ -63,7 +63,6 @@ router.post('/logout', (req, res) => {
   })
 })
 
-// GET /api/auth/me
 router.get('/me', (req, res) => {
   if (req.session && req.session.userId) {
     return res.json({ loggedIn: true, nick: req.session.nick })
