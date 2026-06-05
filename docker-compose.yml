@@ -1,36 +1,52 @@
 services:
 
-  frontend:
-    build: ./client
+  mysql:
+    image: mysql:8.0
+
+    restart: unless-stopped
+
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: finanzas_personales
 
     ports:
-      - "5173:5173"
+      - "3306:3306"
 
     volumes:
-      - ./client:/app
-      - /app/node_modules
+      - mysql_data:/var/lib/mysql
 
   backend:
     build: ./server
 
+    restart: unless-stopped
+
     ports:
       - "3000:3000"
+
+    env_file:
+      - ./server/.env
+
+    depends_on:
+      - mysql
 
     volumes:
       - ./server:/app
       - /app/node_modules
 
-  mysql:
-  image: mysql:8
+  frontend:
+    build: ./client
 
-  environment:
-    MYSQL_ROOT_PASSWORD: root
-    MYSQL_DATABASE: cashyfinance
+    restart: unless-stopped
 
-  ports:
-    - "3306:3306"
+    ports:
+      - "5173:5173"
 
-  volumes:
-    - mysql_data:/var/lib/mysql
+    depends_on:
+      - backend
 
-  
+    volumes:
+      - ./client:/app
+      - /app/node_modules
+
+volumes:
+  mysql_data:
