@@ -19,3 +19,18 @@ services:
     volumes:
       - ./server:/app
       - /app/node_modules
+
+  mysql:
+  image: mysql:8
+
+  environment:
+    MYSQL_ROOT_PASSWORD: root
+    MYSQL_DATABASE: cashyfinance
+
+  ports:
+    - "3306:3306"
+
+  volumes:
+    - mysql_data:/var/lib/mysql
+
+  
