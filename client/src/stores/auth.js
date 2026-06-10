@@ -37,5 +37,3 @@ export const useAuthStore = defineStore('auth', {
     }
   }
 })
-
-//commit de prueba
