@@ -3,7 +3,7 @@ const router = express.Router()
 const db = require('../db')
 const { requireAuth } = require('../middleware/auth')
 
-// GET /api/deudas?mes=2026-00
+
 router.get('/', requireAuth, async (req, res) => {
   const userId = req.session.userId
   const { mes } = req.query
