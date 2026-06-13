@@ -29,7 +29,10 @@ router.get('/', requireAuth, async (req, res) => {
     return res.status(500).json({ error: 'Error al obtener deudas.' })
   }
 })
-
+//prueba de ruta
+router.get('/prueba', requireAuth, (req, res) => {
+  res.json({ message: 'Ruta de prueba de deudas funciona!' })
+})
 // POST /api/deudas
 router.post('/', requireAuth, async (req, res) => {
   const userId = req.session.userId
